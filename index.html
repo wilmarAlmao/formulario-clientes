@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Formulario para tu página web - AlmaStudio</title>
+<style>
+  :root { --bg:#f6f7fb; --card:#fff; --ink:#1f2433; --muted:#6b7280; --main:#2563eb; --line:#e3e6ee; }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; background:var(--bg); color:var(--ink); line-height:1.5; }
+  .wrap { max-width:620px; margin:0 auto; padding:20px 16px 48px; }
+  header { text-align:center; padding:12px 0 18px; }
+  .brand { font-weight:700; letter-spacing:.5px; color:var(--main); }
+  h1 { font-size:1.45rem; margin:8px 0 6px; }
+  header p { color:var(--muted); margin:0; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:18px; margin-bottom:14px; }
+  label.q, .q { display:block; font-weight:600; margin-bottom:4px; }
+  .hint { color:var(--muted); font-size:.9rem; margin:0 0 10px; }
+  input[type=text], input[type=tel], textarea { width:100%; padding:12px; font:inherit; border:1px solid var(--line); border-radius:10px; background:#fff; }
+  input:focus, textarea:focus { outline:2px solid var(--main); border-color:transparent; }
+  textarea { min-height:84px; resize:vertical; }
+  .opt { display:flex; gap:10px; align-items:center; padding:10px 12px; border:1px solid var(--line); border-radius:10px; margin-bottom:8px; cursor:pointer; }
+  .opt input { width:20px; height:20px; accent-color:var(--main); flex:none; }
+  .opt:has(input:checked) { border-color:var(--main); background:#eef3ff; }
+  .btn { display:block; width:100%; text-align:center; padding:14px; border-radius:12px; font:inherit; font-weight:700; border:0; cursor:pointer; text-decoration:none; }
+  .wa { background:#16a34a; color:#fff; }
+  .alt { background:#fff; color:var(--ink); border:1px solid var(--line); margin-top:10px; }
+  #msg { white-space:pre-wrap; background:#f3f4f8; border-radius:10px; padding:12px; font-size:.92rem; margin:10px 0 14px; }
+  .small { color:var(--muted); font-size:.85rem; text-align:center; margin-top:10px; }
+  .error { color:#b91c1c; font-size:.9rem; margin-top:8px; display:none; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand">AlmaStudio</div>
+    <h1>Cuéntanos de tu trabajo</h1>
+    <p>Son 5 minutos y casi todo es con clics. Con esto armamos tu página web.</p>
+  </header>
+
+  <form id="f" autocomplete="off">
+    <div class="card">
+      <label class="q" for="nombre">Tu nombre o el de tu negocio</label>
+      <input type="text" id="nombre" placeholder="Ej: Fontanería Pérez">
+    </div>
+
+    <div class="card">
+      <div class="q">1. ¿Qué trabajos haces?</div>
+      <p class="hint">Marca todo lo que ofreces. Esto es lo que verán tus clientes en la página.</p>
+      <label class="opt"><input type="checkbox" name="serv" value="Cambio de llaves y grifos"> Cambio de llaves y grifos</label>
+      <label class="opt"><input type="checkbox" name="serv" value="Reparación de fugas de agua"> Reparación de fugas de agua</label>
+      <label class="opt"><input type="checkbox" name="serv" value="Destape de tuberías y desagües"> Destape de tuberías y desagües</label>
+      <label class="opt"><input type="checkbox" name="serv" value="Instalación de lavamanos, inodoros y duchas"> Instalación de lavamanos, inodoros y duchas</label>
+      <label class="opt"><input type="checkbox" name="serv" value="Cambio de cerámica y remodelación de baños"> Cambio de cerámica y remodelación de baños</label>
+      <label class="opt"><input type="checkbox" name="serv" value="Instalación de calentadores"> Instalación de calentadores</label>
+      <label class="opt"><input type="checkbox" name="serv" value="Instalación de tanques y bombas de agua"> Instalación de tanques y bombas de agua</label>
+      <label class="opt"><input type="checkbox" name="serv" value="Instalación de gas"> Instalación de gas</label>
+      <label class="opt"><input type="checkbox" name="serv" value="Emergencias 24 horas"> Emergencias 24 horas</label>
+      <label class="q" for="otros" style="margin-top:12px">¿Haces algo más que no esté en la lista?</label>
+      <textarea id="otros" placeholder="Escríbelo aquí, todo lo que se te ocurra"></textarea>
+    </div>
+
+    <div class="card">
+      <label class="q" for="zona">2. ¿En qué zonas o ciudad trabajas?</label>
+      <input type="text" id="zona" placeholder="Ej: Caracas, zona este y Los Teques">
+    </div>
+
+    <div class="card">
+      <label class="q" for="wa">3. Tu número de WhatsApp</label>
+      <p class="hint">Aquí te llegarán los clientes que te escriban desde la página.</p>
+      <input type="tel" id="wa" placeholder="Ej: +58 412 0000000">
+      <label class="q" for="horario" style="margin-top:12px">Tu horario de atención</label>
+      <input type="text" id="horario" placeholder="Ej: Lunes a sábado, 7am a 6pm">
+    </div>
+
+    <div class="card">
+      <div class="q">4. ¿Tienes fotos de trabajos que hayas hecho?</div>
+      <p class="hint">Si no tienes, no pasa nada: la hacemos sin ellas.</p>
+      <label class="opt"><input type="radio" name="fotos" value="Sí tengo fotos, las envío por WhatsApp"> Sí, te las envío por WhatsApp</label>
+      <label class="opt"><input type="radio" name="fotos" value="No tengo fotos por ahora"> No tengo por ahora</label>
+    </div>
+
+    <div class="card">
+      <div class="q">Todo listo. Envíanos tus respuestas</div>
+      <div id="msg">Completa el formulario y aquí verás tu mensaje.</div>
+      <a id="send" class="btn wa" href="#" target="_blank" rel="noopener">Enviar por WhatsApp</a>
+      <button type="button" id="copy" class="btn alt">Copiar mi mensaje</button>
+      <div id="err" class="error">Falta tu número de WhatsApp para poder terminar.</div>
+      <p class="small">Si tienes fotos, mándalas en el mismo chat después de enviar este mensaje.</p>
+    </div>
+  </form>
+</div>
+
+<script>
+  // Número de WhatsApp de AlmaStudio, solo dígitos con código de país (ej: 584121234567).
+  // Si se deja vacío, WhatsApp deja elegir el contacto.
+  var NUMERO_ALMASTUDIO = "34604805394";
+
+  var $ = function (id) { return document.getElementById(id); };
+  var f = $("f"), msg = $("msg"), send = $("send"), err = $("err");
+
+  function armarMensaje() {
+    var servs = Array.prototype.map.call(
+      f.querySelectorAll('input[name="serv"]:checked'), function (c) { return "• " + c.value; });
+    var otros = $("otros").value.trim();
+    if (otros) servs.push("• Otros: " + otros);
+    var fotos = f.querySelector('input[name="fotos"]:checked');
+    var t = "Hola AlmaStudio, aquí está la información para mi página web:\n\n";
+    t += "Negocio: " + ($("nombre").value.trim() || "-") + "\n\n";
+    t += "Servicios:\n" + (servs.length ? servs.join("\n") : "-") + "\n\n";
+    t += "Zona de trabajo: " + ($("zona").value.trim() || "-") + "\n";
+    t += "WhatsApp: " + ($("wa").value.trim() || "-") + "\n";
+    t += "Horario: " + ($("horario").value.trim() || "-") + "\n";
+    t += "Fotos: " + (fotos ? fotos.value : "-");
+    return t;
+  }
+
+  function actualizar() {
+    var t = armarMensaje();
+    msg.textContent = t;
+    send.href = "https://wa.me/" + NUMERO_ALMASTUDIO + "?text=" + encodeURIComponent(t);
+  }
+
+  f.addEventListener("input", actualizar);
+  f.addEventListener("change", actualizar);
+  f.addEventListener("submit", function (e) { e.preventDefault(); });
+
+  send.addEventListener("click", function (e) {
+    if (!$("wa").value.trim()) { e.preventDefault(); err.style.display = "block"; $("wa").focus(); return; }
+    err.style.display = "none";
+  });
+
+  $("copy").addEventListener("click", function () {
+    var b = this;
+    try {
+      navigator.clipboard.writeText(armarMensaje()).then(function () {
+        b.textContent = "¡Copiado! Pégalo en WhatsApp";
+      }, function () { b.textContent = "No se pudo copiar, selecciona el texto de arriba"; });
+    } catch (x) { b.textContent = "No se pudo copiar, selecciona el texto de arriba"; }
+  });
+
+  actualizar();
+</script>
+</body>
+</html>
